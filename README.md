@@ -9,7 +9,8 @@ See https://docs.github.com/en/get-started/writing-on-github/getting-started-wit
 -->
 
 # Split Mfp5 Simulations
-Instructions to generate and run simulations presented in J. Graham and S. Keten "Increase in charge and density improves strength and toughness of mfp5 inspired protein materials" ACS Biomaterials Science and Engineering 2023
+Instructions to generate and run simulations presented in J. Graham and S. Keten "Increase in charge and density improves strength and toughness of mfp5 inspired protein materials" ACS Biomaterials Science and Engineering 2023.
+Optional posttranslational modification to DOPA included.
 
 If you use this tool, please cite the above paper.
 
@@ -60,7 +61,9 @@ If you use this tool, please cite the above paper.
 
 1. File **submit.sh** contains all the bash commands necessary to build simulations and can be run using the command "bash submit.sh". Before running **submit.sh**, there are a few lines of code that must be changed. 1) Change the line "source activate /projects/p31412/Mfp_Brushes/envs/fga_mfp" such that it specifies the path to your newly created conda environment. 2) Correct the line "/home/jjg9482/packmol/packmol < pack1_chains.inp" such that the command specifies the path to your newly installed packmol executable. Keep '< pack1_chains.inp' after you have specified the path. This indicates which packmol input file to use. 3) Change the commands "module load python/anaconda3.6" and "module load vmd" to specify paths to your pre-compiled versions of anaconda and vmd. 4) Run the script using "bash submit.sh"
 
-1. Change directories into the newly generated directory containing all simulations entitled **split_fp_simulations** and navigate into the directory **annealing_input_submit**. **split_fp_simulations** is outside of the directory **generate_paper_simulations**. Run the bash script **copy_lmpin.sh** using "bash copy_lmpin.sh", which will modify **annealing_template.in** and copy it as **annealing.in** into the **annealing** directory of each simulation.
+2. OPTIONAL: If you prefer to run simulations with tyrosine post translationally modified to DOPA, following the instructions in the previous step using file **submit_DOPA.sh** instead of **submit.sh**. This will create folder **split_fp_simulations_DOPA** outside of the current working directory as opposed to **split_fp_simulations**.
+
+1. Change directories into the newly generated directory containing all simulations entitled **split_fp_simulations** and navigate into the directory **annealing_input_submit**. **split_fp_simulations** is outside of the directory **Split_Mfp5_Simulations_DOPA**. Run the bash script **copy_lmpin.sh** using "bash copy_lmpin.sh", which will modify **annealing_template.in** and copy it as **annealing.in** into the **annealing** directory of each simulation.
 
 1. Run the bash script **copy_submit.sh** using "bash copy_submit.sh", which will modify **submit_annealing_template.sh** and copy it as **submit_annealing.sh** into the **annealing** directory of each simulation.
 
