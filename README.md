@@ -34,7 +34,7 @@ If you use this tool, please cite the above paper.
 
 ## File Descriptions:
 
-### In main directory generate_paper_simulations
+### In main directory **Split_Mfp5_Simulations_DOPA**
 
 - **addsegID.py** - Adds a particular segment ID and chain ID to an existing pdb of a single chain. This is necessary to use the VMD psfgen plugin.
 
