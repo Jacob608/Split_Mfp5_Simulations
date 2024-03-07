@@ -25,77 +25,77 @@ module purge all
 # 'KRtoSS' are appended to a chain type, it means that tyrosine (Y) or lysine (K) and arginine (R) residues are 
 # mutated to serine (S) for that chain type. These mutations are reflected by the sequences listed in
 # arrays chain_A and chain_B.
-declare -a sims=('Nfp5-Cfp5') #\
-				 # 'Nfp5' \
-				 # 'Cfp5' \
-				 # 'Cfp5YtoS'\
-				 # 'Nfp5YtoS'\
-				 # 'Cfp5KRtoSS'\
-				 # 'Nfp5-Cfp5YtoS'\
-				 # 'Nfp5-Cfp5KRtoSS'\
-				 # 'Nfp5KRtoSS'\
-				 # 'fp5')
+declare -a sims=('Nfp5-Cfp5'\
+				 'Nfp5' \
+				 'Cfp5' \
+				 'Cfp5YtoS'\
+				 'Nfp5YtoS'\
+				 'Cfp5KRtoSS'\
+				 'Nfp5-Cfp5YtoS'\
+				 'Nfp5-Cfp5KRtoSS'\
+				 'Nfp5KRtoSS'\
+				 'fp5')
 
 # The array chain_A lists the primary sequence of one half of the protein chains
 # in the system defined by the corresponding position in array sims. Each letter
 # represents a single common amino acid. (ex. The first entry in array sims is 'Nfp5-Cfp5'.
 # The sequence of entry 1 in array chain_A is therefore the primary sequence of protein Nfp5.)
 
-declare -a chain_A=('SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG') #\
-					   # 'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG'\
-					   # 'KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS'\
-					   # 'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS'\
-					   # 'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
-					   # 'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
-					   # 'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
-					   # 'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'\
-					   # 'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'\
-					   # 'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYGKAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS')
+declare -a chain_A=('SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG'\
+					   'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG'\
+					   'KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS'\
+					   'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS'\
+					   'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
+					   'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
+					   'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
+					   'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'\
+					   'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'\
+					   'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYGKAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS')
 
 # The array chain_B lists the primary sequence of one half of the protein chains
 # in the system defined by the corresponding position in array sims. Each letter
 # represents a single common amino acid. (ex. The first entry in the array sims is 'Nfp5-Cfp5'.
 # The sequence of entry 1 in array chain_B is therefore the primary sequence of protein Cfp5.)
 
-declare -a chain_B=('KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS') #\
-						# 'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG' \
-						# 'KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS' \
-						# 'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS' \
-						# 'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
-						# 'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
-						# 'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS'\
-						# 'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
-						# 'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'
-						# 'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYGKAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS')
+declare -a chain_B=('KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS'\
+						'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYG' \
+						'KAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS' \
+						'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS' \
+						'SSEESKGGSSPGNTSHSHSGGSSHGSGSHGGSKGKSSG'\
+						'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
+						'KAKKSSSKSKNSGKSKSLKKARKSHRKGSKKSSGGGSS'\
+						'SASSYYYSYSNSGSYSYLSSASSYHSSGYSSYYGGGSS'\
+						'SSEEYSGGYYPGNTYHYHSGGSYHGSGYHGGYSGSYYG'
+						'SSEEYKGGYYPGNTYHYHSGGSYHGSGYHGGYKGKYYGKAKKYYYKYKNSGKYKYLKKARKYHRKGYKKYYGGGSS')
 
 # The array charge lists the number of charges that must be added to the system
 # to neutralize it. The charge is neutralized by addition of either sodium or chloride 
 # depending on whether the charge is negative or positive.
 
-declare -a charge=(192) # \
-				   # 24 \
-				   # 360 \
-				   # 360 \
-				   # 24 \
-				   # 0 \
-				   # 192 \
-				   # -24 \
-				   # -48 \
-				   # 192)
+declare -a charge=(192 \
+				   24 \
+				   360 \
+				   360 \
+				   24 \
+				   0 \
+				   192 \
+				   -24 \
+				   -48 \
+				   192)
 
 # The array numWaters lists the number of water molecules necessary to generate
 # a melt that is 10% water by weight.
 
-declare -a numWaters=(669) # \
-					  # 605 \
-					  # 733 \
-					  # 620 \
-					  # 493 \
-					  # 593 \
-					  # 534 \
-					  # 588 \
-					  # 583 \
-					  # 669)
+declare -a numWaters=(669\
+					  605 \
+					  733 \
+					  620 \
+					  493 \
+					  593 \
+					  534 \
+					  588 \
+					  583 \
+					  669)
 
 mkdir ../split_fp_simulations_DOPA # All simulations will be output into this directory.
 
